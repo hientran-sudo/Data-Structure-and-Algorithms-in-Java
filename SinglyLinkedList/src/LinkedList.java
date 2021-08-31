@@ -19,6 +19,12 @@ public class LinkedList {
 		System.out.println("After insertion at the end");
 		list.insertend(5);
 		list.print();
+		
+		System.out.println("After insertion at the given node");
+		list.insertgiven(third,8);
+		list.print();
+		
+		
 	}
 
 	public void print() {
@@ -45,6 +51,13 @@ public class LinkedList {
 		tail.next = n;
 		return;
 		}
+	
+	public void insertgiven (Node n, int a) {
+		Node b = new Node(a);		
+		b.next = n.next;
+		n.next = b;		
+	}
 
 	}
+
 
