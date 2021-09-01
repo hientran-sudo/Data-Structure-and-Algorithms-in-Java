@@ -19,17 +19,18 @@ public class LinkedList {
 		System.out.println("After insertion at the end");
 		list.insertend(5);
 		list.print();
-		
+
 		System.out.println("After insertion at the given node");
-		list.insertgiven(third,8);
+		list.insertgiven(third, 8);
 		list.print();
-		
+
 		System.out.println("After delete a given node");
 		list.delete(1);
 		list.print();
 		
-		
-		
+		System.out.println("After delete a given position");
+		list.deleteposition(1);
+		list.print();
 	}
 
 	public void print() {
@@ -55,22 +56,32 @@ public class LinkedList {
 		}
 		tail.next = n;
 		return;
-		}
-	
-	public void insertgiven (Node n, int a) {
-		Node b = new Node(a);		
-		b.next = n.next;
-		n.next = b;		
 	}
-	
-	public void delete (int c) {
+
+	public void insertgiven(Node n, int a) {
+		Node b = new Node(a);
+		b.next = n.next;
+		n.next = b;
+	}
+
+	public void delete(int c) {
 		Node n = head, prev = null;
-		while (n!= null && n.data != c) {
+		while (n != null && n.data != c) {
 			prev = n;
-			n = n.next;			
+			n = n.next;
+		}
+		prev.next = n.next;
+	}
+
+	public void deleteposition (int p) {
+		int position = 0;
+		Node n = head, prev = null;
+		while ( n!= null && position!= p ) {
+			prev = n;
+			n = n.next;
+			position ++;
 		}
 		prev.next = n.next;
 		
 	}
 }
-
