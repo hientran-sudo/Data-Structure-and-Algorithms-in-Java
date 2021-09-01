@@ -27,18 +27,24 @@ public class LinkedList {
 		System.out.println("After delete a given node");
 		list.delete(1);
 		list.print();
-		
+
 		System.out.println("After delete a given position");
 		list.deleteposition(1);
 		list.print();
-		
-		//System.out.println("Delete a whole Linked List");
-		//list.deleteList();
-		//list.print();
-		
+
+		// System.out.println("Delete a whole Linked List");
+		// list.deleteList();
+		// list.print();
+
 		System.out.println("length of list " + list.findLength());
-		
-		
+		if (list.exist(list.head,31)) {
+			System.out.println("yes");
+		}
+		else
+		{
+			System.out.println("no");
+		}
+
 	}
 
 	public void print() {
@@ -46,7 +52,7 @@ public class LinkedList {
 		while (n != null) {
 			System.out.println(n.data + " ");
 			n = n.next;
-		}		
+		}
 	}
 
 	public void insertbeginning(int a) {
@@ -81,28 +87,38 @@ public class LinkedList {
 		prev.next = n.next;
 	}
 
-	public void deleteposition (int p) {
+	public void deleteposition(int p) {
 		int position = 0;
 		Node n = head, prev = null;
-		while ( n!= null && position!= p ) {
+		while (n != null && position != p) {
 			prev = n;
 			n = n.next;
-			position ++;
+			position++;
 		}
-		prev.next = n.next;		
+		prev.next = n.next;
 	}
-	
-	public void deleteList () {
+
+	public void deleteList() {
 		head = null;
 	}
-	
-	public int findLength () {
+
+	public int findLength() {
 		int length = 0;
 		Node n = head;
-		while (n!=null) {
+		while (n != null) {
 			n = n.next;
 			length++;
 		}
 		return length;
+	}
+
+	boolean exist(Node head, int key) {
+		if (head == null) {
+			return false;
+		}           
+		if (head.data == key) {
+			return true;
+		}	
+		return exist(head.next,key);
 	}
 }
