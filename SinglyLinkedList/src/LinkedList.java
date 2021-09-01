@@ -32,9 +32,11 @@ public class LinkedList {
 		list.deleteposition(1);
 		list.print();
 		
-		System.out.println("Delete a whole Linked List");
-		list.deleteList();
-		list.print();
+		//System.out.println("Delete a whole Linked List");
+		//list.deleteList();
+		//list.print();
+		
+		list.findLength();
 		
 		
 	}
@@ -92,5 +94,15 @@ public class LinkedList {
 	
 	public void deleteList () {
 		head = null;
+	}
+	
+	public void findLength () {
+		int length = 0;
+		Node n = head;
+		while (n!=null) {
+			n = n.next;
+			length++;
+		}
+		System.out.println("Length of List " + length);
 	}
 }
