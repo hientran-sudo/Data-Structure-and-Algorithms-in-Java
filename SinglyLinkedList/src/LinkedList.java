@@ -24,6 +24,11 @@ public class LinkedList {
 		list.insertgiven(third,8);
 		list.print();
 		
+		System.out.println("After delete a given node");
+		list.delete(1);
+		list.print();
+		
+		
 		
 	}
 
@@ -57,7 +62,15 @@ public class LinkedList {
 		b.next = n.next;
 		n.next = b;		
 	}
-
+	
+	public void delete (int c) {
+		Node n = head, prev = null;
+		while (n!= null && n.data != c) {
+			prev = n;
+			n = n.next;			
+		}
+		prev.next = n.next;
+		
 	}
-
+}
 
