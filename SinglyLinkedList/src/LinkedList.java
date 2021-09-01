@@ -31,6 +31,12 @@ public class LinkedList {
 		System.out.println("After delete a given position");
 		list.deleteposition(1);
 		list.print();
+		
+		System.out.println("Delete a whole Linked List");
+		list.deleteList();
+		list.print();
+		
+		
 	}
 
 	public void print() {
@@ -38,7 +44,7 @@ public class LinkedList {
 		while (n != null) {
 			System.out.println(n.data + " ");
 			n = n.next;
-		}
+		}		
 	}
 
 	public void insertbeginning(int a) {
@@ -81,7 +87,10 @@ public class LinkedList {
 			n = n.next;
 			position ++;
 		}
-		prev.next = n.next;
-		
+		prev.next = n.next;		
+	}
+	
+	public void deleteList () {
+		head = null;
 	}
 }
