@@ -37,6 +37,7 @@ public class LinkedList {
 		// list.print();
 
 		System.out.println("length of list " + list.findLength());
+		
 		if (list.exist(list.head,31)) {
 			System.out.println("yes");
 		}
@@ -44,6 +45,9 @@ public class LinkedList {
 		{
 			System.out.println("no");
 		}
+		
+		System.out.println("Find a node at the given position");
+		list.find(2);
 
 	}
 
@@ -120,5 +124,18 @@ public class LinkedList {
 			return true;
 		}	
 		return exist(head.next,key);
+	}
+	
+	public void find(int p) {
+		int position = 0;
+		Node n = head;
+		while (n!=null)
+		{			
+			if (position == p) {
+				System.out.println(n.data);
+			}
+			n = n.next;
+			position++;
+		}			
 	}
 }
