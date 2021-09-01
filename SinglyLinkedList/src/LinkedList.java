@@ -36,7 +36,7 @@ public class LinkedList {
 		//list.deleteList();
 		//list.print();
 		
-		list.findLength();
+		System.out.println("length of list " + list.findLength());
 		
 		
 	}
@@ -96,13 +96,13 @@ public class LinkedList {
 		head = null;
 	}
 	
-	public void findLength () {
+	public int findLength () {
 		int length = 0;
 		Node n = head;
 		while (n!=null) {
 			n = n.next;
 			length++;
 		}
-		System.out.println("Length of List " + length);
+		return length;
 	}
 }
