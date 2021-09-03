@@ -16,7 +16,7 @@ public class Quack {
 	}
 		
 	static void deQueue() {
-		stack2.pop();
+		stack1.pop();
 	}
 	
 	static void print() {
@@ -29,5 +29,7 @@ public class Quack {
 		q.enQueue(2);
 		q.enQueue(3);
 		q.print();	
+		q.deQueue();
+		q.print();
 	}
 }
