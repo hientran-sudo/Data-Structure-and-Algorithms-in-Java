@@ -8,9 +8,7 @@ public class Main {
 		stack.push(1);
 		stack.push(2);
 		stack.push(3);
-		for (Integer s : stack) {
-			System.out.println(s);
-		}
+		System.out.println(stack);
 		System.out.println("top element " + stack.peek());
 		try {
 			while (stack.peek()!=null) {
