@@ -24,10 +24,23 @@ public class BinaryTree {
 	public void inOrder() {
 		traverseInOrder(root);
 	}
+	
 	public void traverseInOrder(Node node) {
 	    if (node != null) {
 	        traverseInOrder(node.left);
 	        System.out.print(" " + node.value);
+	        traverseInOrder(node.right);
+	    }
+	}
+
+	public void preOrder() {
+		traversePreOrder(root);
+	}
+	
+	public void traversePreOrder(Node node) {
+	    if (node != null) {
+	    	System.out.print(" " + node.value);
+	        traverseInOrder(node.left);      
 	        traverseInOrder(node.right);
 	    }
 	}
