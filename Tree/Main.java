@@ -9,7 +9,10 @@ public class Main {
 	    bt.add(5);
 	    bt.add(7);
 	    bt.add(9);
+	    System.out.println("InOrder Tranversal");
 	    bt.inOrder();
+	    System.out.println("\n" + "PreOrder Tranversal");
+	    bt.preOrder();	
 	}
 
 }
